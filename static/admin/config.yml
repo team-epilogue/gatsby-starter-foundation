@@ -20,7 +20,7 @@ collections:
     label_singular: "Post" # Used in the UI, ie: "New Post"
     description: >
       Create awesome content here.
-    folder: "src/content/posts"
+    folder: "content/blog"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}} — {{year}}/{{month}}/{{day}}"
     create: true # Allow users to create new documents in this collection
@@ -66,7 +66,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "src/content/pages/index.md"
+        file: "content/pages/index.md"
         fields:
           - {
               label: "Template",
@@ -91,7 +91,7 @@ collections:
                 widget: "string"
       - label: "About"
         name: "about"
-        file: "src/content/pages/about.md"
+        file: "content/pages/about.md"
         fields:
           - {
               label: "Template",
@@ -104,7 +104,7 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Contact"
         name: "contact"
-        file: "src/content/pages/contact.md"
+        file: "content/pages/contact.md"
         fields:
           - {
               label: "Template",
