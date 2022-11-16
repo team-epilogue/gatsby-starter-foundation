@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-contact-page-js",
+    "path": "/contact",
+    "result": {"data":{"markdownRemark":{"id":"596c1bd8-19a6-56a8-aac0-3ca8ab1e141a","html":"<p>Got a burning question regarding <strong>JAMstack</strong>, Need a new <strong>Website</strong>, or just anything in general. We are happy to talk.</p>\n<p>Just send us a message using the form below or you can send us a DM on <a href=\"https://twitter.com/stackrole\">Twitter</a></p>","excerpt":"Got a burning question regarding JAMstack, Need a new Website, or just anything in general. We are happy to talk. Just send us a message…","frontmatter":{"title":"Get in touch"}},"site":{"siteMetadata":{"title":"Foundation"}}},"pageContext":{"id":"596c1bd8-19a6-56a8-aac0-3ca8ab1e141a","previous":{"id":"f5b1599b-5ddd-5383-9b80-0bf0fa456a58","frontmatter":{"slug":"/","template":"index-page","title":"Wyatt Morriss"}},"next":{"id":"62eacb84-2fbb-5838-8440-69712225c9c6","frontmatter":{"slug":"/about","template":"about-page","title":"About Foundation"}}}},
+    "staticQueryHashes": ["2744905544","358227665","373717404"]}
