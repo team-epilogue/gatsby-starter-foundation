@@ -8,7 +8,7 @@ author: githubId
 featured: false
 featuredpost: false
 title: Hello World
-description: Hello World
+description: This is my first post on my new fake blog! How exciting!
 category: category1
 tags: [hello]
 date: 2022-11-13T10:57:35.157Z
