@@ -50,8 +50,8 @@ const SEO = ({ title, description, image, article }) => {
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      {social?.twitter && (
-        <meta name="twitter:creator" content={social?.twitter} />
+      {social?.twitter.username && (
+        <meta name="twitter:creator" content={social?.twitter.username} />
       )}
 
       {seo.title && <meta name="twitter:title" content={seo.title} />}
@@ -91,7 +91,26 @@ const query = graphql`
         siteUrl: siteUrl
         defaultImage: image
         social {
-          twitter
+          twitter {
+            title
+            url
+            username
+          }
+          github {
+            title
+            url
+            username
+          }
+          instagram {
+            title
+            url
+            username
+          }
+          email {
+            title
+            url
+            username
+          }
         }
       }
     }

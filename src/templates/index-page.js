@@ -24,7 +24,7 @@ import { FaWordpress, FaVk } from "react-icons/fa"
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import Seo from "../components/seo"
-import Icons from "../util/socialmedia.json"
+import Site from "../util/site.json"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -73,27 +73,16 @@ export const pageQuery = graphql`
 const HomePage = ({ data }) => {
   const { markdownRemark, posts } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  const Image = frontmatter.featuredImage
-    ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
-    : ""
-  const sIcons = Icons.socialIcons.map((icons, index) => {
+  const Author = Site.meta.author ? Site.meta.author : ""
+  const Image = Author ? Author.profile : ""
+  const social_ids = Site.meta.social
+  const _social_ids = Object.keys(social_ids)
+  const sIcons = _social_ids.map((social_id, i) => {
     return (
-      <div key={"social icons" + index}>
-        {icons.icon === "facebook" ? (
+      <div key={i}>
+        {social_ids[social_id].title === "twitter" ? (
           <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Facebook"
-            rel="noopener noreferrer"
-          >
-            <RiFacebookBoxFill alt="Facebook icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "twitter" ? (
-          <a
-            href={icons.url}
+            href={social_ids[social_id].url + social_ids[social_id].username}
             target="_blank"
             aria-label="link to Twitter"
             rel="noopener noreferrer"
@@ -103,33 +92,9 @@ const HomePage = ({ data }) => {
         ) : (
           ""
         )}
-        {icons.icon === "linkedin" ? (
+        {social_ids[social_id].title === "instagram" ? (
           <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Linkedin"
-            rel="noopener noreferrer"
-          >
-            <RiLinkedinBoxFill alt="Linkedin icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "youtube" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Youtube"
-            rel="noopener noreferrer"
-          >
-            <RiYoutubeFill alt="Youtube icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "instagram" ? (
-          <a
-            href={icons.url}
+            href={social_ids[social_id].url + social_ids[social_id].username}
             target="_blank"
             aria-label="link to Instagram"
             rel="noopener noreferrer"
@@ -139,134 +104,14 @@ const HomePage = ({ data }) => {
         ) : (
           ""
         )}
-        {icons.icon === "rss" ? (
+        {social_ids[social_id].title === "github" ? (
           <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to RSS"
-            rel="noopener noreferrer"
-          >
-            <RiRssFill alt="RSS icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "github" ? (
-          <a
-            href={icons.url}
+            href={social_ids[social_id].url + social_ids[social_id].username}
             target="_blank"
             aria-label="link to Github"
             rel="noopener noreferrer"
           >
             <RiGithubFill alt="Github icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "telegram" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Telegram"
-            rel="noopener noreferrer"
-          >
-            <RiTelegramFill alt="Telegram icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "pinterest" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Pinterest"
-            rel="noopener noreferrer"
-          >
-            <RiPinterestFill alt="Pinterest icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "snapchat" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Snapchat"
-            rel="noopener noreferrer"
-          >
-            <RiSnapchatFill alt="Snapchat icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "skype" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Skype"
-            rel="noopener noreferrer"
-          >
-            <RiSkypeFill alt="Skype icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "wordpress" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Wordpress"
-            rel="noopener noreferrer"
-          >
-            <FaWordpress alt="Wordpress icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "dribbble" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Dribbble"
-            rel="noopener noreferrer"
-          >
-            <RiDribbbleFill alt="Dribbble icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "medium" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Medium"
-            rel="noopener noreferrer"
-          >
-            <RiMediumFill alt="Medium icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "behance" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to Behance"
-            rel="noopener noreferrer"
-          >
-            <RiBehanceFill alt="Behance icon" />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "vk" ? (
-          <a
-            href={icons.url}
-            target="_blank"
-            aria-label="link to vk"
-            rel="noopener noreferrer"
-          >
-            <FaVk alt="vk icon" />
           </a>
         ) : (
           ""
@@ -279,19 +124,16 @@ const HomePage = ({ data }) => {
       <Seo />
       <div className="home-banner grids col-1 sm-2">
         <div>
-          <h1 className="title">{frontmatter.title}</h1>
+          <h1 className="title">{Site.meta.title}</h1>
           <p
             className="tagline"
             sx={{
               color: "muted",
             }}
           >
-            {frontmatter.tagline}
+            {Author?.summary}
           </p>
-          <div
-            className="description"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <div>{Site.meta.description}</div>
           <Link
             to={frontmatter.cta.ctaLink}
             className="button"
@@ -315,10 +157,12 @@ const HomePage = ({ data }) => {
         </div>
         <div>
           {Image ? (
-            <GatsbyImage
-              image={Image}
-              alt={frontmatter.title + " - Featured image"}
+            <img
+              src={Image}
+              width={500}
+              height={350}
               className="featured-image"
+              alt="Profile picture"
             />
           ) : (
             ""
