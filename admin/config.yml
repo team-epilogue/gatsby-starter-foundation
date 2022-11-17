@@ -125,7 +125,7 @@ collections:
     files:
       - name: general
         label: General
-        file: "src/util/site.json"
+        file: "src/utils/site.json"
         fields:
           - label: meta
             name: meta
@@ -167,7 +167,7 @@ collections:
             hint: "Add you tracking ID, for example UA-XXXXXXXXX-X"
       - label: Social Icons
         name: socialIcons
-        file: "src/util/socialmedia.json"
+        file: "src/utils/socialmedia.json"
         fields:
           - label: Social Icons
             name: socialIcons
@@ -211,7 +211,7 @@ collections:
     files:
       - label: "Default Theme"
         name: "themescolors"
-        file: "src/util/default-colors.json"
+        file: "src/utils/default-colors.json"
         fields:
           - label: "Primary Color"
             name: "siteColor"
@@ -220,7 +220,7 @@ collections:
             allowInput: true
       - label: "Dark Theme"
         name: "darkthemescolors"
-        file: "src/util/dark-theme-colors.json"
+        file: "src/utils/dark-theme-colors.json"
         fields:
           - label: "Primary Color"
             name: "siteColor"
