@@ -24,7 +24,7 @@ import { FaWordpress, FaVk } from "react-icons/fa"
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import Seo from "../components/seo"
-import Site from "../util/site.json"
+import Site from "../utils/site.json"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
